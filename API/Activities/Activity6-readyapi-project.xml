@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project id="3cd04214-42ad-4fb8-8cf5-3fb81135680d" created="3.53.0" activeEnvironment="Default environment" encryptionMode="Not encrypted" name="Activity 4" resourceRoot="" projectVersion="" updated="3.53.0 2024-05-13T12:06:25Z" xmlns:con="http://eviware.com/soapui/config">
+<con:soapui-project id="419d8c98-afed-4873-a69b-4862bfb349c9" created="3.53.0" activeEnvironment="Default environment" encryptionMode="Not encrypted" name="Activity6" projectVersion="" updated="3.53.0 2024-05-13T12:06:25Z" xmlns:con="http://eviware.com/soapui/config">
   <con:settings/>
-  <con:interface xsi:type="con:RestService" id="77754aef-2941-496c-9813-cb655a7563f8" wadlVersion="http://wadl.dev.java.net/2009/02" name="http://ipwhois.app" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <con:settings id="db6edb8a-b469-4c64-b8ad-0723cebe7f41"/>
+  <con:interface xsi:type="con:RestService" id="ef5ecbf8-d99f-4ee6-b94f-c00cd55c7833" wadlVersion="http://wadl.dev.java.net/2009/02" name="http://ipwhois.app" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings id="68876a55-515d-4f22-83fd-0bea30f848e5"/>
     <con:definitionCache type="TEXT" rootPart=""/>
     <con:endpoints>
       <con:endpoint>http://ipwhois.app</con:endpoint>
     </con:endpoints>
-    <con:resource name="IP" path="/json/{IP}" id="85ae8437-2be3-45bf-8010-b5947151b19c">
+    <con:resource name="IP" path="/json/{IP}" id="e5cc5b67-223e-4bf2-ad55-49b9ad3ff5fd">
       <con:settings/>
       <con:parameters/>
-      <con:method name="IP" id="ddf00809-4a1e-477c-af0b-ef84cbac5a3b" method="GET">
+      <con:method name="IP" id="4d9d286e-04e8-45a0-83a9-df8815aa7c68" method="GET">
         <con:settings/>
         <con:parameters>
           <con:parameter required="true">
@@ -26,17 +26,11 @@
           <con:mediaType>application/json; charset=utf-8</con:mediaType>
           <con:status>200</con:status>
           <con:params/>
-          <con:element xmlns:json="http://ipwhois.app/json/">json:Response</con:element>
+          <con:element xmlns:ns="http://ipwhois.app/json/106.144.68.58">ns:Response</con:element>
         </con:representation>
-        <con:request name="Request 1" id="58be7716-4615-4654-9d75-409ee641b775" mediaType="application/json">
+        <con:request name="Request 1" id="35c39232-0bd9-4d51-816e-5b336e11c9ec" mediaType="application/json">
           <con:settings/>
           <con:endpoint>http://ipwhois.app</con:endpoint>
-          <con:request/>
-          <con:credentials>
-            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-            <con:authType>No Authorization</con:authType>
-          </con:credentials>
-          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
           <con:parameters>
             <con:entry key="IP" value="IP"/>
           </con:parameters>
@@ -47,44 +41,72 @@
       </con:method>
     </con:resource>
   </con:interface>
-  <con:testSuite id="2e18632c-744f-45f5-9937-ef7b0ec9edd7" name="http://ipwhois.app Test Suite">
-    <con:settings id="671e2aa6-be09-4997-a9b1-02a96c8e8f10"/>
+  <con:testSuite id="aedda541-56e7-4933-96dc-2f8cb381b40c" name="http://ipwhois.app Test Suite">
+    <con:settings id="b2b30e4b-699c-40b3-9e7e-dda70e1cec66"/>
     <con:runType>SEQUENTIAL</con:runType>
-    <con:testCase id="848e0687-b4b7-44ec-9845-d8a38b05fec6" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="http://ipwhois.app Test Case 1" searchProperties="true" timeout="0">
+    <con:testCase id="ac60dd69-b7df-48d9-860b-bbe60eb02803" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="http://ipwhois.app Test Case 1" searchProperties="true" timeout="0">
       <con:settings/>
-      <con:testStep type="datasource" name="Data Source" id="5e881b86-abb3-4a84-8db7-223c846726f2">
+      <con:testStep type="datasource" name="Data Source" id="545ea2ee-7a87-42dd-a5fb-86db6d7d377f">
         <con:settings/>
         <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-          <con:dataSource type="File">
+          <con:dataSource type="Data Generator">
             <con:configuration>
-              <fileName>C:/Users/003J6N744/eclipse-workspace/FST_API/Activity4.txt</fileName>
-              <separator>,</separator>
-              <trim>true</trim>
-              <charset>Cp1252</charset>
-              <quotedValues>false</quotedValues>
+              <generatedDataCount>10</generatedDataCount>
+              <generatorsTotalNumber>1</generatorsTotalNumber>
+              <lastSelectedProperty>-1</lastSelectedProperty>
+              <GeneratorType0>COMP</GeneratorType0>
+              <PropertyName0>IP</PropertyName0>
+              <repetitionCountIP>0</repetitionCountIP>
+              <repeatValuesIP>false</repeatValuesIP>
+              <ComputerAddressTypeIP>IPv4</ComputerAddressTypeIP>
+              <escapeSpaceSequence/>
             </con:configuration>
           </con:dataSource>
-          <con:shared>true</con:shared>
-          <con:restartShared>true</con:restartShared>
+          <con:shared>false</con:shared>
+          <con:restartShared>false</con:restartShared>
           <con:property>IP</con:property>
           <con:restartOnRun>true</con:restartOnRun>
           <con:stopDatasourceExhausted>false</con:stopDatasourceExhausted>
         </con:config>
       </con:testStep>
-      <con:testStep type="restrequest" name="Request 1" id="d20eb501-337b-439d-9b8a-86d039a2e1bf">
+      <con:testStep type="properties" name="Properties" id="e35acbed-2c83-4dcd-82d4-54580cd17bc9">
+        <con:settings/>
+        <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:properties/>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Request 1" id="0064dd5c-bbbd-4016-9d09-3b901e3ec18f">
         <con:settings/>
         <con:config service="http://ipwhois.app" resourcePath="/json/{IP}" methodName="IP" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-          <con:restRequest name="Request 1" id="58be7716-4615-4654-9d75-409ee641b775" mediaType="application/json">
+          <con:restRequest name="Request 1" id="35c39232-0bd9-4d51-816e-5b336e11c9ec" mediaType="application/json">
             <con:settings>
               <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
             </con:settings>
             <con:endpoint>http://ipwhois.app</con:endpoint>
             <con:request/>
-            <con:originalUri>http://ipwhois.app/json/</con:originalUri>
-            <con:assertion type="Valid HTTP Status Codes" id="12211e06-d74a-48d9-b1f2-8f99d4b29965" name="Valid HTTP Status Codes">
+            <con:originalUri>http://ipwhois.app/json/106.144.68.58</con:originalUri>
+            <con:assertion type="Valid HTTP Status Codes" id="ec41c1ff-b911-4dfb-bc0c-41fe7232e504" name="Valid HTTP Status Codes">
               <con:settings/>
               <con:configuration>
                 <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="1a514991-878d-4951-bb3b-176bb798734c" name="JSONPath Match">
+              <con:configuration>
+                <path>$['country']</path>
+                <content/>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="e5b3eb12-6971-4862-b4b3-4339b1a570ae" name="JSONPath Match 2">
+              <con:configuration>
+                <path>$['country']</path>
+                <content>Japan</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
               </con:configuration>
             </con:assertion>
             <con:credentials>
@@ -93,7 +115,7 @@
             </con:credentials>
             <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
             <con:parameters>
-              <con:entry key="IP" value="${Data Source#address}"/>
+              <con:entry key="IP" value="${Data Source#IP}"/>
             </con:parameters>
             <con:parameterOrder>
               <con:entry>IP</con:entry>
@@ -101,23 +123,12 @@
           </con:restRequest>
         </con:config>
       </con:testStep>
-      <con:testStep type="datasourceloop" name="Data Source Loop" id="8e00dec8-51fb-46eb-a3c1-773608c9ecfa">
+      <con:testStep type="datasourceloop" name="Data Source Loop" id="3b34eb16-fc1d-4cb2-accf-e68b21f35e40">
         <con:settings/>
         <con:config>
           <dataSourceStep>Data Source</dataSourceStep>
           <targetStep>Request 1</targetStep>
           <discardResults>true</discardResults>
-        </con:config>
-      </con:testStep>
-      <con:testStep type="properties" name="Properties" id="01cf5912-fc0c-4f00-bf8a-eaad798d5b42">
-        <con:settings/>
-        <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-          <con:properties>
-            <con:property>
-              <con:name>address</con:name>
-              <con:value/>
-            </con:property>
-          </con:properties>
         </con:config>
       </con:testStep>
       <con:properties/>
